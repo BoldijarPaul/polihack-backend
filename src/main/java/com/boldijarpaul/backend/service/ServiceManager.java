@@ -51,10 +51,9 @@ public class ServiceManager {
 	}
 
 	public static List<Story> getStories() {
-		List<Story> stories = null;
-		Collections.copy(stories, ServiceManager.stories);
 		for (Story story : stories) {
 			story.quests = new ArrayList<Quest>();
+			story.quests.clear();
 			for (Quest quest : quests) {
 				if (quest.storyId == quest._id) {
 					story.quests.add(quest);
@@ -79,6 +78,14 @@ public class ServiceManager {
 
 	public static Quiz updateQuiz(Quiz quiz) {
 		return CRUDHelper.updateObject(quiz, quizes);
+	}
+
+	public static Quiz getQuizByHash(String hash) {
+		for (Quiz quiz : quizes) {
+			if (quiz.hash.equals(hash))
+				return quiz;
+		}
+		return null;
 	}
 
 }

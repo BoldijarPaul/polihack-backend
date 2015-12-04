@@ -20,3 +20,14 @@ adauga questul, bodyul e questul in json
 
 #### PUT /quests/update
 face update, bodyul e jsonul deja editat cu questul
+
+#### POST /quizes/add
+adauga quizul
+
+#### PUT /quizes/update
+actualizeaza quizul
+
+#### GET /quiz , parametru hash
+returneaza quizul cu hashul din parametru, daca nu exista, un mesaj "not found"
+ex: /quiz?hash=abcbdef
+
